@@ -28,7 +28,7 @@ public class UnityChanController : MonoBehaviour
 
     // キューブの生成個数の上限
     private int maxBlockNum = 4;
-    /*
+    
     private Animator myAnimator;
     private Rigidbody myRigidbody;
     private float velocityZ = 16f;
@@ -46,7 +46,7 @@ public class UnityChanController : MonoBehaviour
     private bool isLButtonDown = false;
     private bool isRButtonDown = false;
     private bool isJButtonDown = false;
-    */
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +79,7 @@ public class UnityChanController : MonoBehaviour
         float inputVelocityY = 0;
 
         
+        
         if ((Input.GetKey(KeyCode.LeftArrow) || this.isLButtonDown) && -this.movableRange < this.transform.position.x)
         {
             inputVelocityX = -this.velocityX;
@@ -87,10 +88,11 @@ public class UnityChanController : MonoBehaviour
         {
             inputVelocityX = this.velocityX;
         }
+        
 
-        if((Input.GetKeyDown(KeyCode.Space) || this.isJButtonDown)&& this.transform.position.y < 0.5f)//←の＆＆以降消すと無限ジャンプなる
+        if((Input.GetKeyDown(KeyCode.Space) || this.isJButtonDown) && this.transform.position.y < 0.5f)//←の＆＆以降消すと無限ジャンプなる
         {
-            this.myAnimator.SetBool("jump", true);
+            this.myAnimator.SetBool("Jump", true);
             inputVelocityY = this.velocityY;
         }
         else

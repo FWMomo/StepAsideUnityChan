@@ -6,6 +6,8 @@ public class MyCameraController : MonoBehaviour
 {
     private GameObject unitychan;
     private float difference;
+    private GameObject coinPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +19,6 @@ public class MyCameraController : MonoBehaviour
     void Update()
     {
         this.transform.position = new Vector3(0, this.transform.position.y, this.unitychan.transform.position.z - difference);
+
     }
 }
